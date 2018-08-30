@@ -4,11 +4,25 @@ class IciciCard implements AtmCard{
     private String cardHolderName;
     private int balance;
 
-    SbiCard(int cardNumber,int cvv,int balance,String cardHoString){
+    IciciCard(int cardNumber,int cvv,int balance,String cardHolderName){
         setBalance(balance);
         setCardHolderName(cardHolderName);
         setCardNumber(cardNumber);
         setCvv(cvv);
+    }
+
+
+    public void setDetails(int cardNumber,int cvv,int balance,String cardHoString){
+        setBalance(balance);
+        setCardHolderName(cardHolderName);
+        setCardNumber(cardNumber);
+        setCvv(cvv);
+    }
+    
+    public void getDetails(){
+        System.out.println("Cardholder name "+this.getCardHolderName());
+        System.out.println("Cardnumber "+this.getCardNumber());
+        System.out.println("The balance "+this.getBalance());
     }
     
     public void setBalance(int balance) {
