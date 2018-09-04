@@ -1,0 +1,6 @@
+indore
+bombay
+banglore
+pune
+delhi
+agra
