@@ -5,6 +5,17 @@ import java.io.SequenceInputStream;
 
 class MergeCity{
     public static void main(String[] args) throws IOException{
+
+        for(int i=1;i<3;i++){
+            FileInputStream f1=new FileInputStream("data"+i+".txt");
+            FileOutputStream fout = new FileOutputStream("mergedata.txt",true);
+            byte b1[]=new byte[f1.available()];
+            f1.read(b1);
+            fout.write(b1);
+            f1.close();
+            fout.close();
+        }
+        /*java
         FileInputStream f1=new FileInputStream("data.txt1");
         FileInputStream f2=new FileInputStream("data.txt2");
         FileInputStream f3=new FileInputStream("data.txt3");
@@ -19,5 +30,6 @@ class MergeCity{
         f3.read(b3);
         fout.write(b3);
         //SequenceInputStream sq=new SequenceInputStream(f1, f2);
+        */
     }
 }

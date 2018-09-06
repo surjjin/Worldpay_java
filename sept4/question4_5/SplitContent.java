@@ -16,14 +16,23 @@ class SplitContent{
             int f=fin.available();
             int i=1;
             byte b[]=new byte[f/n];
+            StringBuffer s=new StringBuffer(as[0]);
+            s.replace(s.lastIndexOf("."), s.length(),"");
+            String name;
+            
             while(i<=n){
-                fout=new FileOutputStream(as[0]+i);
+                name=s+String.valueOf(i)+".txt";
+                fout=new FileOutputStream(name);    
                 fin.read(b);
                 fout.write(b);
                     i++;
+                fout.close();
                 
             }
             
+            
         }
+        
+        fin.close();
     }
 }
