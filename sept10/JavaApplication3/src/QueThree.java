@@ -15,6 +15,7 @@ public class QueThree extends java.awt.Frame {
      */
     public QueThree() {
         initComponents();
+        button1.addActionListener(new A(textField1,textField2));
     }
 
     /**
