@@ -2,8 +2,11 @@
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -54,15 +57,9 @@ public class QueFourEmpForm extends java.awt.Frame {
 
         label1.setText("Username");
 
-        textField1.setText("textField1");
-
         label2.setText("Password");
 
-        textField2.setText("textField2");
-
         label3.setText("Salary");
-
-        textField3.setText("textField3");
 
         button1.setLabel("add");
         button1.setName(""); // NOI18N
@@ -158,6 +155,9 @@ public class QueFourEmpForm extends java.awt.Frame {
          emp.setUsername(textField1.getText());
          emp.setPassword(textField2.getText());
          emp.setSalary(Integer.parseInt(textField3.getText()));
+         textField1.setText("");
+         textField2.setText("");
+         textField3.setText("");
          
          a.add(emp);
     }//GEN-LAST:event_button1ActionPerformed
@@ -170,7 +170,17 @@ public class QueFourEmpForm extends java.awt.Frame {
     }//GEN-LAST:event_button3ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        
+        try {
+            PreparedStatement ps = con.prepareStatement("insert into employe values(?,?,?)");
+            for(Employe e:a){
+                ps.setString(1, e.getUsername());
+                ps.setString(2, e.getPassword());
+                ps.setInt(3, e.getSalary());
+                ps.executeUpdate();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(QueFourEmpForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_button2ActionPerformed
 
     /**
