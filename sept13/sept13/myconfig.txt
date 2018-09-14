@@ -1,1 +1,1 @@
-
+driver=com.mysql.jdbc.Driver,url=jdbc:mysql://localhost:3306/suraj,uid=root,pwd=root,
