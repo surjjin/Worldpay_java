@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>register user</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body style="background-color: buttonhighlight ">
+        
+        <form action="RegisterUser" method="POST" >
+            <pre>
+                Username:<input type="text" name="username" value="" /><br>
+                Password:<input type="password" name="password" value="" /><br>
+                gender  :<input type="radio" name="gender" value="male" /> male
+                         <input type="radio" name="gender" value="female" /> female <br>
+                name    :<input type="text" name="name" value="" /><br>
+                city    :<input type="text" name="city" value="" /><br>
+                degree  :<select name="degree">
+                            <option>BE</option>
+                            <option>MTECH</option>
+                            <option>BTECH</option>
+                        </select><br>
+                Interest:<select name="interest">
+                            <option>sports</option>
+                            <option>reality</option>                            
+                        </select>            <br>
+                        <input type="submit" value="register" name="register" />
+            </pre>
+        </form>
+            
+    </body>
+</html>
