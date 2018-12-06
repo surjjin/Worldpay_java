@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+   
+   <bean id="info" class="springSept27QueTwo.Info">
+ 	<property name="qualification" value="BE"/>
+ 	<property name="state" value="MP"/>
+ 	<property name="city" value="Indore"/>  
+   </bean>	
+   <bean id="abstractinfo" abstract="true">
+   <property name="qualification" value="BE"/>
+ 	<property name="state" value="MP"/>
+ 	<property name="city" value="Indore"/>
+   
+   </bean>
+   <bean id="emp" class="springSept27QueTwo.Emp" parent="abstractinfo">
+   <property name="eno" value="103"/>
+   <property name="ename" value="Suraj"/>
+     
+   </bean>
+
+</beans>

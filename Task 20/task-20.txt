@@ -1,0 +1,14 @@
+(SpringMVC)
+
+create a sample application using spring MVC for performing CRUD operations on
+Customer tables.
+
+your home page will have links for
+(WebAppTwo)
+
+(DONE)1) Add - Customer
+(DONE)2) Delete - Customer
+(DONE)3) Update - Customer
+(DONE)4) Search - Customer
+
+write application using approriate Model,View And Controller

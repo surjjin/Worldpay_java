@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+   <bean id="address1" class="springSept27QueFour.Address">
+   		<property name="houseno" value="45"/>
+   		<property name="street" value="Kanadia"/>
+   		<property name="city" value="Inodre"/>
+   		<property name="pincode" value="452016"/>
+   </bean>
+   <bean id="address2" class="springSept27QueFour.Address">
+   		<property name="houseno" value="4"/>
+   		<property name="street" value="GPO"/>
+   		<property name="city" value="Inodre"/>
+   		<property name="pincode" value="452001"/>
+   </bean>
+   
+   <bean id="info1" class="springSept27QueFour.Info">
+   		<property name="name" value="Suraj"/>
+   		<property name="age" value="22"/>
+   		<property name="address" ref="address1"/>
+   </bean>
+    <bean id="info2" class="springSept27QueFour.Info">
+   		<property name="name" value="DAD"/>
+   		<property name="age" value="50"/>
+   		<property name="address" ref="address1"/>
+   </bean>
+    <bean id="info3" class="springSept27QueFour.Info">
+   		<property name="name" value="BROTHER"/>
+   		<property name="age" value="17"/>
+   		<property name="address" ref="address2"/>
+   </bean>
+    <bean id="mobile1" class="springSept27QueFour.Mobile">
+   		<property name="mbno" value="9452437"/>
+   		<property name="serviceProvider" value="BSNL"/>
+   		<property name="ctrcode" value="0731"/>
+   </bean>
+   <bean id="mobile2" class="springSept27QueFour.Mobile">
+   		<property name="mbno" value="945243"/>
+   		<property name="serviceProvider" value="IDEA"/>
+   		<property name="ctrcode" value="0732"/>
+   </bean>
+   
+   <bean id="employee" class="springSept27QueFour.Employee">
+   	<property name="emails">
+   		<set>
+   			<value>abc@gmail.com</value>
+   			<value>abcXYZ@gmail.com</value>
+   		</set>
+   	</property>
+   	<property name="mobiles">
+   		<list>
+   			<ref bean="mobile1"/>
+   			<ref bean="mobile2"/>
+   		</list>
+   	</property>
+   	<property name="family">
+   	<map>
+   		<entry key="me" value-ref="info1"/>
+   		<entry key="father" value-ref="info2"/>
+   		<entry key="brother" value-ref="info3"/>
+   	</map>
+   	
+   	</property>
+   	
+   </bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	
+	<bean id="pcard" class="springSept26Cards.PlatinumCard">
+	<property name="cardno" value="123456"/>
+	<property name="expdate" value="7/5/23"/>
+	<property name="limit" value="50000"/>
+	</bean>
+	<bean id="scard" class="springSept26Cards.SilverCard"/>
+	<bean id="gcard" class="springSept26Cards.GoldCard"/>
+	<bean id="rpc" class="springSept26Cards.RewardCalculator">
+	<property name="cc" ref="pcard"/>
+	</bean>
+
+</beans>
